@@ -14,7 +14,6 @@ const contact = {
 const socialLabels = { line: "LINE", linkedin: "LinkedIn", facebook: "Facebook", website: "Website" };
 const socialLinks = document.querySelector("#social-links");
 const toast = document.querySelector("#toast");
-const qrDialog = document.querySelector("#qr-dialog");
 let toastTimer;
 
 function currentUrl() {
@@ -59,24 +58,5 @@ async function shareContact() {
   }
 }
 
-function showQrCode() {
-  const url = currentUrl();
-  const target = document.querySelector("#qr-output");
-  target.replaceChildren();
-  if (!url) {
-    target.textContent = "Deploy the site to create its QR code.";
-  } else {
-    const qr = qrcode(0, "M");
-    qr.addData(url);
-    qr.make();
-    target.innerHTML = qr.createSvgTag({ scalable: true, margin: 0 });
-  }
-  qrDialog.showModal();
-}
-
 document.querySelector("#share-button").addEventListener("click", shareContact);
-document.querySelector("#qr-button").addEventListener("click", showQrCode);
-document.querySelector("#qr-close").addEventListener("click", () => qrDialog.close());
-document.querySelector("#copy-link-button").addEventListener("click", copyLink);
-qrDialog.addEventListener("click", (event) => { if (event.target === qrDialog) qrDialog.close(); });
 renderSocialLinks();

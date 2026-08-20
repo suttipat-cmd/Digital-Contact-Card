@@ -10,7 +10,7 @@ A fast, mobile-first Digital Contact Card built with plain HTML, CSS, and JavaSc
 4. Select branch **main** and folder **/(root)**, then save.
 5. GitHub displays the final public URL on the same Pages screen. For this repository it will normally be `https://suttipat-cmd.github.io/Digital-Contact-Card/`.
 
-The QR code intentionally uses the current deployed URL. It will work automatically after the public site is opened; no placeholder URL is embedded.
+Create a QR code externally from the public site URL for printed business cards, signatures, or presentations. The contact card itself does not display a second QR code after visitors scan in.
 
 ## Update contact information
 
@@ -34,13 +34,9 @@ Leave a value blank to hide that link. Do not add guessed account URLs.
 
 ## QR and link preview
 
-- Use the **QR Code** button on the published site to show the QR code for its exact current URL.
+- Use `https://suttipat-cmd.github.io/Digital-Contact-Card/` as the source URL when creating an external QR code.
 - Add a 1200 × 630 px preview image to `assets/`, then set an absolute `og:image` URL in `index.html` after publishing if you want a custom social preview.
 
 ## Local preview
 
 Open `index.html` in a browser, or run a static server from this folder. The QR code and Copy Link need a deployed `https` URL to use the final public address.
-
-## Third-party notice
-
-`assets/vendor/qrcode.js` is a locally vendored QR encoder from the MIT-licensed [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator) project. It is included locally so the card does not rely on a QR service or CDN request.
