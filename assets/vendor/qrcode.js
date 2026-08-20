@@ -2295,3 +2295,6 @@ var qrcode = function() {
 }(function () {
     return qrcode;
 }));
+
+// Expose the encoder for the contact card's non-module browser script.
+if (typeof window !== 'undefined') window.qrcode = qrcode;
